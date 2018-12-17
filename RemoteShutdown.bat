@@ -3,54 +3,54 @@ setlocal enabledelayedexpansion
 echo;
 net view
 echo;
-set /P HOST=VJP132-WIN10
-set /P USER=remilia0031@gmail.com
+set /P HOST=
+set /P USER=
 echo;
 
-set /P modeKey=s‚¤“®ì‚ð‘I‘ð‚µ‚Ä‰º‚³‚¢B [S]hutDown / [R]eboot:
+set /P modeKey=è¡Œã†å‹•ä½œã‚’é¸æŠžã—ã¦ä¸‹ã•ã„ã€‚ [S]hutDown / [R]eboot:
 echo;
 
-echo Ú‘±ŠJŽnc
+echo æŽ¥ç¶šé–‹å§‹â€¦
 net use \\!HOST! /user:!USER!
 if ERRORLEVEL 1 (
-	echo Ú‘±Ž¸”sB
+	echo æŽ¥ç¶šå¤±æ•—ã€‚
 	pause
 	goto exit
 ) else (
-	echo Ú‘±‚µ‚Ü‚µ‚½B
+	echo æŽ¥ç¶šã—ã¾ã—ãŸã€‚
 	echo;
 	timeout 1 >nul
-	set /P pushKey=!HOST!‚É‘Î‚µ‚ÄŽÀs‚³‚¹‚Ü‚·‚©Hy/n:
+	set /P pushKey=!HOST!ã«å¯¾ã—ã¦å®Ÿè¡Œã•ã›ã¾ã™ã‹ï¼Ÿy/n:
 	echo;
 	if "!pushKey!"=="y" (
 		if "!modeKey!"=="s" (
-			echo ƒVƒƒƒbƒgƒ_ƒEƒ“ŠJŽnc
+			echo ã‚·ãƒ£ãƒƒãƒˆãƒ€ã‚¦ãƒ³é–‹å§‹â€¦
 			echo;
 			timeout 1 >nul
 			C:\Windows\System32\shutdown.exe -s -m \\%HOST%
 			timeout 1 >nul
 			net use \\!HOST! /delete >nul
-			echo Ø’f‚µ‚Ü‚µ‚½B
+			echo åˆ‡æ–­ã—ã¾ã—ãŸã€‚
 			echo;
-			echo ƒVƒƒƒbƒgƒ_ƒEƒ“‚³‚¹‚Ü‚µ‚½B
+			echo ã‚·ãƒ£ãƒƒãƒˆãƒ€ã‚¦ãƒ³ã•ã›ã¾ã—ãŸã€‚
 			echo;
 			pause
 		)
 		if "!modeKey!"=="r" (
-			echo Ä‹N“®ŠJŽnc
+			echo å†èµ·å‹•é–‹å§‹â€¦
 			echo;
 			timeout 1 >nul
 			C:\Windows\System32\shutdown.exe -r -m \\%HOST%
 			timeout 1 >nul
 			net use \\!HOST! /delete >nul
-			echo Ø’f‚µ‚Ü‚µ‚½B
+			echo åˆ‡æ–­ã—ã¾ã—ãŸã€‚
 			echo;
-			echo Ä‹N“®‚³‚¹‚Ü‚µ‚½B
+			echo å†èµ·å‹•ã•ã›ã¾ã—ãŸã€‚
 			echo;
 			pause
 		)
 	) else (
-		echo ƒLƒƒƒ“ƒZƒ‹‚µ‚Ü‚µ‚½B
+		echo ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ã¾ã—ãŸã€‚
 		echo;
 		pause
 	)
